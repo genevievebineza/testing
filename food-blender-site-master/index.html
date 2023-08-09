@@ -1,0 +1,70 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}{% link assets/css/styles.css %}">
+
+    <script src="{{ site.baseurl }}{% link assets/js/main.js %}"></script>
+
+    {% include critters.html %}
+</head>
+
+<body>
+    <header>
+        <h1>{{ site.title }}</h1>
+    </header>
+
+    <section>
+        <h2>Ingredients</h2>
+
+        <div>
+            <span onchange="blend()">
+                <select id=foodInput1>
+                    <option value="">--</option>
+                </select>
+
+                <select id=foodInput2>
+                    <option value="">--</option>
+                </select>
+            </span>
+
+            <br>
+            <br>
+
+            <button id="critterButton" onclick="protein()">
+                Protein!
+            </button>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <div id="result">
+                <object id="splat1" class="splat under" data="{{ 'assets/img/splat1.svg' | relative_url }}"
+                    type="image/svg+xml"></object>
+
+                <object id="splat2" class="splat over" data="{{ 'assets/img/splat2.svg' | relative_url }}"
+                    type="image/svg+xml"></object>
+
+                <object id="critterSvg" class="critter" data="" type="image/svg+xml"></object> </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <!-- Developer note: The corner banner was added on the site before instead of this, but it causes issues when the SVGs change. -->
+        <a href="https://github.com/{{ site.github_repo }}">
+            <img src="https://img.shields.io/github/forks/MichaelCurrin/food-blender-site?style=social">
+        </a>
+    </footer>
+</body>
+
+</html>
